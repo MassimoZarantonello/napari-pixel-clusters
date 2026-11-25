@@ -1,0 +1,17 @@
+name: napari-pixel-clusters
+display_name: Pixel Cluster Explorer
+contributions:
+  readers:
+    - command: napari-pixel-clusters.get_reader
+      filename_patterns: ["*.tif", "*.tiff", "*.ome.tif", "*.ome.tiff"]
+      accepts_directories: false
+  commands:
+    - id: napari-pixel-clusters.get_reader
+      python_name: napari_pixel_clusters.reader:get_reader
+      title: Open a MACSima OME-TIFF
+    - id: napari-pixel-clusters.make_explorer
+      python_name: napari_pixel_clusters.widget:ClusterExplorer
+      title: Pixel Cluster Explorer
+  widgets:
+    - command: napari-pixel-clusters.make_explorer
+      display_name: Pixel Cluster Explorer

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "napari-pixel-clusters"
+version = "0.0.1"
+description = "Explore FlowSOM pixel clusters of MACSima images in napari"
+requires-python = ">=3.11"
+dependencies = [
+    "napari>=0.5",
+    "qtpy",
+    "numpy",
+    "dask",
+    "zarr",
+    "tifffile",
+    "matplotlib",
+    "harpy-analysis",
+    "spatialdata",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."napari.manifest"]
+napari-pixel-clusters = "napari_pixel_clusters:napari.yaml"
+
+[tool.setuptools.package-data]
+napari_pixel_clusters = ["napari.yaml"]
